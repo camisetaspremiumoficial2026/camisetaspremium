@@ -1,0 +1,346 @@
+/* --- CONFIGURACIÓN GENERAL TIPOGRÁFICA (HEREDADA DE INDEX) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+
+/* --- CONFIGURACIÓN GENERAL Y FONDO DECORATIVO COMPLETO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    /* Cargamos una capa oscura translúcida del 75% encima de la imagen para que tus formularios y textos sigan siendo perfectamente legibles */
+    background-image: 
+        linear-gradient(rgba(11, 11, 11, 0.75), rgba(11, 11, 11, 0.75)), 
+        url('../img/fondo.png'); /* Ruta corregida según tu árbol de carpetas */
+    
+    background-size: cover;          /* Obliga a la imagen a cubrir toda la pantalla */
+    background-position: center top; /* Centra la imagen centrándose en la espalda/hombros */
+    background-repeat: no-repeat;    /* Evita que se duplique */
+    background-attachment: fixed;    /* Efecto premium fijo: el contenido se desplaza y el fondo queda estático */
+    background-color: #0b0b0b;       /* Fondo de respaldo */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.main-navbar {
+    background-color: rgba(11, 11, 11, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* El círculo insignia pulido */
+.nav-logo-circle {
+    width: 70px;  
+    height: 70px;
+    background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%); 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid #d4af37; 
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.6),            
+        inset 0 0 8px rgba(212, 175, 55, 0.3),    
+        inset 0 2px 4px rgba(255, 255, 255, 0.2); 
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-logo-circle img {
+    height: 90%;          
+    width: 90%;
+    object-fit: contain;  
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.8));
+    transition: transform 0.4s ease;
+}
+
+.nav-logo-circle:hover {
+    transform: scale(1.05);
+    border-color: #f3e5ab;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25), inset 0 0 12px rgba(212, 175, 55, 0.5);
+}
+
+.nav-logo-circle:hover img {
+    transform: scale(1.08) translateY(-2px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 4px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.nav-icons span:hover { color: #d4af37; }
+
+.cart-icon-container { position: relative; }
+.cart-badge {
+    position: absolute; top: -6px; right: -8px;
+    background-color: #d4af37; color: #000;
+    font-size: 9px; font-weight: 900;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+}
+
+/* --- HERO SECTION REDUCIDO --- */
+.hero-section {
+    position: relative;
+    height: 45vh; /* Más baja que index para enfocarse en el contenido */
+    background: linear-gradient(90deg, rgba(11,11,11,0.95) 40%, rgba(11,11,11,0.6) 100%), 
+                url('https://images.unsplash.com/photo-1517838357463-d25dfeac3438?w=1600&fit=crop') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-content .subtitle {
+    color: #d4af37; font-size: 13px; font-weight: 700; letter-spacing: 3px;
+    display: block; margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 55px; font-weight: 900; line-height: 1.1; margin-bottom: 15px;
+}
+
+.hero-content p { font-size: 18px; color: #ccc; }
+
+.gold-text { color: #d4af37; }
+
+.btn-gold-outline {
+    border: 1px solid #d4af37; color: #d4af37;
+    padding: 12px 25px; font-size: 12px; font-weight: 700;
+    letter-spacing: 1px; display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-gold-outline:hover { background-color: #d4af37; color: #000; }
+
+.icon-inline { vertical-align: middle; }
+
+/* --- CONTENEDOR GLOBAL --- */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 4%;
+}
+
+/* --- GRID DE TARJETAS DE INFORMACIÓN --- */
+.contacto-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.info-premium-card {
+    background-color: #121212;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-premium-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-4px);
+}
+
+.card-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+}
+
+.card-icon-wrapper span {
+    color: #d4af37;
+    font-size: 28px;
+}
+
+.info-premium-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.info-premium-card p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    height: 45px; /* Alineación simétrica del texto */
+}
+
+.btn-card-action {
+    display: block;
+    border: 1px solid #444;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.info-premium-card:hover .btn-card-action {
+    border-color: #d4af37;
+    background-color: #d4af37;
+    color: #000;
+}
+
+/* --- SECCIÓN FORMULARIO --- */
+.formulario-container {
+    background-color: #121212;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    padding: 45px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-header {
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Estructuración interna del Formulario */
+.premium-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.premium-form label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #aaa;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.premium-form input,
+.premium-form select,
+.premium-form textarea {
+    background-color: #1a1a1a;
+    border: 1px solid #2d2d2d;
+    border-radius: 4px;
+    padding: 12px 15px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.premium-form input:focus,
+.premium-form select:focus,
+.premium-form textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.15);
+}
+
+/* Estructura responsiva de filas dobles */
+.form-row-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+@media(max-width: 500px) {
+    .form-row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Botón de envío estilizado WhatsApp */
+.btn-submit-whatsapp {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #d4af37;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit-whatsapp:hover {
+    background-color: #25d366; /* Transiciona al verde WhatsApp */
+    border-color: #25d366;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* --- FOOTER UNIFICADO --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+    border-top: 1px solid #111;
+    color: #444;
+    font-size: 12px;
+}
+

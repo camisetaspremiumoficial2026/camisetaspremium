@@ -2,156 +2,179 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>VX Sport - Contacto</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Camisetas Premium</title>
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 
-<header class="hero hero-contacto">
-    <h1>📬 CONTACTO</h1>
-    <p>Estamos para ayudarte</p>
-</header>
+  
 
-<nav>
-    <a href="/index.html" class="nav-active">Inicio</a>
-    <a href="/htmls/verano.html">Verano</a>
-    <a href="/htmls/invierno.html">Invierno</a>
-    <a href="/htmls/otros.html">Varios</a>
-    <a href="/htmls/contacto.html">📋 Contacto</a>
-    <a href="https://www.instagram.com/vxsport" target="_blank" class="nav-ig">📸 Instagram</a>
-</nav>
-
-<main>
-
-    <a href="index.html" class="btn-volver">← Volver al Inicio</a>
-
-    <!-- INFO DE CONTACTO -->
-    <section class="contacto-info">
-        <div class="info-card">
-            <span class="info-icon">📱</span>
-            <h3>WhatsApp</h3>
-            <p>Respondemos en minutos</p>
-            <a href="https://wa.me/549XXXX" class="btn-info" target="_blank">Escribinos</a>
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <a href="../index.html">
+                <div class="nav-logo-circle">
+                    <img src="../img/logo2-.png" alt="Camisetas Premium Logo">
+                </div>
+            </a>
         </div>
-        <div class="info-card">
-            <span class="info-icon">📸</span>
-            <h3>Instagram</h3>
-            <p>Seguinos para ver novedades</p>
-            <a href="https://www.instagram.com/vxsport" class="btn-info" target="_blank">@vxsport</a>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="verano.html">Adultos</a>
+            <a href="invierno.html">Niños</a>
+            <a href="otros.html">Otros</a>
+            <a href="contacto.html" class="active">Contacto</a>
         </div>
-        <div class="info-card">
-            <span class="info-icon">📦</span>
-            <h3>Envíos</h3>
-            <p>Todo el país por correo</p>
-            <a href="#formulario" class="btn-info">Hacer pedido</a>
+        <div class="nav-icons">
+            <span class="material-symbols-outlined">search</span>
+            <div class="cart-icon-container">
+            </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- FORMULARIO DE CONTACTO -->
-    <section id="formulario" class="formulario-section">
-        <h2>📋 Hacer un Pedido</h2>
-        <p class="form-sub">Completá el formulario y te contactamos por WhatsApp</p>
-        <form id="pedidoForm" onsubmit="enviarPedido(event)">
-            <div class="form-group">
-                <label>Nombre completo</label>
-                <input type="text" id="nombre" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-                <label>WhatsApp / Teléfono</label>
-                <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
-            </div>
-            <div class="form-group">
-                <label>Producto que querés</label>
-                <select id="producto">
-                    <option value="">-- Seleccioná un producto --</option>
-                    <optgroup label="☀️ Verano">
-                        <option value="Remera Dry-Fit (VX-V01) - $9.500">Remera Dry-Fit (VX-V01) - $9.500</option>
-                        <option value="Short Running (VX-V02) - $7.500">Short Running (VX-V02) - $7.500</option>
-                        <option value="Musculosa Sport (VX-V03) - $6.000">Musculosa Sport (VX-V03) - $6.000</option>
-                        <option value="Calza Corta (VX-V04) - $8.000">Calza Corta (VX-V04) - $8.000</option>
-                        <option value="Remera UV Protection (VX-V05) - $11.000">Remera UV Protection (VX-V05) - $11.000</option>
-                        <option value="Short Natación (VX-V06) - $8.500">Short Natación (VX-V06) - $8.500</option>
-                    </optgroup>
-                    <optgroup label="🧥 Invierno">
-                        <option value="Buzo Hoodie (VX-I01) - $16.000">Buzo Hoodie (VX-I01) - $16.000</option>
-                        <option value="Campera Deportiva (VX-I02) - $22.000">Campera Deportiva (VX-I02) - $22.000</option>
-                        <option value="Pantalón Jogger (VX-I03) - $13.500">Pantalón Jogger (VX-I03) - $13.500</option>
-                        <option value="Conjunto Térmico (VX-I04) - $28.000">Conjunto Térmico (VX-I04) - $28.000</option>
-                        <option value="Buzo Cuello Alto (VX-I05) - $14.000">Buzo Cuello Alto (VX-I05) - $14.000</option>
-                        <option value="Calza Térmica (VX-I06) - $10.500">Calza Térmica (VX-I06) - $10.500</option>
-                    </optgroup>
-                    <optgroup label="🎽 Varios">
-                        <option value="Zapatillas Running (VX-X01) - $35.000">Zapatillas Running (VX-X01) - $35.000</option>
-                        <option value="Mochila Deportiva (VX-X02) - $18.000">Mochila Deportiva (VX-X02) - $18.000</option>
-                        <option value="Medias Deportivas x3 (VX-X03) - $4.500">Medias Deportivas x3 (VX-X03) - $4.500</option>
-                        <option value="Gorra Sport (VX-X04) - $5.500">Gorra Sport (VX-X04) - $5.500</option>
-                        <option value="Botella Térmica (VX-X05) - $7.000">Botella Térmica (VX-X05) - $7.000</option>
-                        <option value="Guantes Gym (VX-X06) - $6.500">Guantes Gym (VX-X06) - $6.500</option>
-                    </optgroup>
-                    <optgroup label="🛒 Destacados">
-                        <option value="Remera Training (VX01) - $10.000">Remera Training (VX01) - $10.000</option>
-                        <option value="Short Pro (VX02) - $8.000">Short Pro (VX02) - $8.000</option>
-                        <option value="Buzo Elite (VX03) - $15.000">Buzo Elite (VX03) - $15.000</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Talle</label>
-                <select id="talle">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M" selected>M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    <option value="Único">Único (accesorios)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Cantidad</label>
-                <input type="number" id="cantidad" min="1" value="1">
-            </div>
-            <div class="form-group">
-                <label>Provincia / Ciudad</label>
-                <input type="text" id="ciudad" placeholder="Ej: Buenos Aires, CABA">
-            </div>
-            <div class="form-group">
-                <label>Comentarios (opcional)</label>
-                <textarea id="comentarios" placeholder="Color, consulta, combinaciones, etc."></textarea>
-            </div>
-            <button type="submit" class="btn-form">Enviar Pedido por WhatsApp 🚀</button>
-        </form>
-    </section>
+    <header class="hero-section hero-short">
+        <div class="hero-content">
+            <span class="subtitle">ATENCIÓN PERSONALIZADA</span>
+            <h1>📬 CONTACTO</h1>
+            <p>Estamos para ayudarte a elegir tu estilo premium</p>
+        </div>
+    </header>
 
-</main>
+    <main class="container">
 
-<footer>
-    <div class="footer-content">
-        <p>© 2026 VX Sport</p>
-        <a href="https://www.instagram.com/vxsport" target="_blank" class="footer-ig">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            @vxsport
-        </a>
-    </div>
-</footer>
+        <div style="margin-bottom: 30px;">
+            <a href="../index.html" class="btn-gold-outline" style="padding: 8px 16px; font-size: 11px;">
+                <span class="material-symbols-outlined icon-inline" style="font-size: 16px;">arrow_back</span> VOLVER AL INICIO
+            </a>
+        </div>
 
-<script>
-function enviarPedido(e) {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre').value;
-    const telefono = document.getElementById('telefono').value;
-    const producto = document.getElementById('producto').value || 'No especificado';
-    const talle = document.getElementById('talle').value;
-    const cantidad = document.getElementById('cantidad').value;
-    const ciudad = document.getElementById('ciudad').value || 'No especificada';
-    const comentarios = document.getElementById('comentarios').value || 'Ninguno';
+        <section class="contacto-info-grid">
+            <div class="info-premium-card">
+                <div class="card-icon-wrapper">
+                    <span class="material-symbols-outlined">chat</span>
+                </div>
+                <h3>WhatsApp</h3>
+                <p>Respondemos tus dudas en minutos de manera directa</p>
+                <a href="https://wa.me/549XXXX" class="btn-card-action" target="_blank">Escribinos</a>
+            </div>
 
-    const mensaje = `🛒 *NUEVO PEDIDO - VX Sport*\n\n👤 Nombre: ${nombre}\n📱 Teléfono: ${telefono}\n👕 Producto: ${producto}\n📏 Talle: ${talle}\n🔢 Cantidad: ${cantidad}\n📍 Ciudad: ${ciudad}\n💬 Comentarios: ${comentarios}`;
+            <div class="info-premium-card">
+                <div class="card-icon-wrapper">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                </div>
+                <h3>Instagram</h3>
+                <p>Seguinos para ver los últimos ingresos y promociones</p>
+                <a href="https://www.instagram.com/vxsport" class="btn-card-action" target="_blank">@vxsport</a>
+            </div>
 
-    const url = `https://wa.me/549XXXX?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
-}
-</script>
+            <div class="info-premium-card">
+                <div class="card-icon-wrapper">
+                    <span class="material-symbols-outlined">local_shipping</span>
+                </div>
+                <h3>Envíos Seguros</h3>
+                <p>Llegamos a todo el país a través de correo certificado</p>
+                <a href="#formulario" class="btn-card-action">Hacer pedido</a>
+            </div>
+        </section>
 
+        <section id="formulario" class="formulario-container">
+            <div class="form-header">
+                <h2><span class="material-symbols-outlined icon-inline gold-text">assignment</span> HACER UN PEDIDO</h2>
+                <p>Completá los datos y generá tu orden directo a nuestro WhatsApp de atención</p>
+            </div>
+
+            <form id="pedidoForm" class="premium-form" onsubmit="enviarPedido(event)">
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">WhatsApp / Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="producto">Producto de interés</label>
+                        <select id="producto">
+                            <option value="">-- Seleccioná un producto --</option>
+                            <!-- <optgroup label="☀️ Verano">
+                                <option value="Remera Dry-Fit (VX-V01) - $9.500">Remera Dry-Fit (VX-V01) - $9.500</option>
+                                <option value="Short Running (VX-V02) - $7.500">Short Running (VX-V02) - $7.500</option>
+                                <option value="Musculosa Sport (VX-V03) - $6.000">Musculosa Sport (VX-V03) - $6.000</option>
+                            </optgroup>
+                            <optgroup label="🧥 Invierno">
+                                <option value="Buzo Hoodie (VX-I01) - $16.000">Buzo Hoodie (VX-I01) - $16.000</option>
+                                <option value="Campera Deportiva (VX-I02) - $22.000">Campera Deportiva (VX-I02) - $22.000</option>
+                                <option value="Pantalón Jogger (VX-I03) - $13.500">Pantalón Jogger (VX-I03) - $13.500</option>
+                            </optgroup>
+                            <optgroup label="🛒 Destacados">
+                                <option value="Remera Training (VX01) - $10.000">Remera Training (VX01) - $10.000</option>
+                                <option value="Short Pro (VX02) - $8.000">Short Pro (VX02) - $8.000</option>
+                                <option value="Buzo Elite (VX03) - $15.000">Buzo Elite (VX03) - $15.000</option>
+                            </optgroup> -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="talle">Talle</label>
+                        <select id="talle">
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M" selected>M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" id="cantidad" min="1" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Provincia / Ciudad</label>
+                        <input type="text" id="ciudad" placeholder="Ej: Buenos Aires, CABA">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios u observaciones (opcional)</label>
+                    <textarea id="comentarios" rows="4" placeholder="Especificá colores, dudas o combinaciones que desees..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit-whatsapp">
+                    ENVIAR PEDIDO POR WHATSAPP <span class="material-symbols-outlined icon-inline">rocket_launch</span>
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Camisetas Premium. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+    function enviarPedido(e) {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const telefono = document.getElementById('telefono').value;
+        const producto = document.getElementById('producto').value || 'No especificado';
+        const talle = document.getElementById('talle').value;
+        const cantidad = document.getElementById('cantidad').value;
+        const ciudad = document.getElementById('ciudad').value || 'No especificada';
+        const comentarios = document.getElementById('comentarios').value || 'Ninguno';
+
+        const mensaje = `🛒 *NUEVO PEDIDO - Camisetas Premium*\n\n👤 Nombre: ${nombre}\n📱 Teléfono: ${telefono}\n👕 Producto: ${producto}\n📏 Talle: ${talle}\n🔢 Cantidad: ${cantidad}\n📍 Ciudad: ${ciudad}\n💬 Comentarios: ${comentarios}`;
+
+        const url = `https://wa.me/549XXXX?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+    }
+    </script>
 </body>
 </html>
