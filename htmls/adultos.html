@@ -9,7 +9,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR (igual que index.html) -->
     <nav class="main-navbar">
         <div class="nav-logo">
             <a href="../index.html">
@@ -18,18 +17,26 @@
                 </div>
             </a>
         </div>
-        <div class="nav-links">
+    
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    
+        <div class="nav-links" id="navLinks">
+            <button class="nav-close" aria-label="Cerrar menú">
+                <span class="material-symbols-outlined">close</span>
+            </button>
             <a href="../index.html">Inicio</a>
             <a href="adultos.html" class="active">Adultos</a>
             <a href="niños.html">Niños</a>
             <a href="otros.html">Otros</a>
             <a href="contacto.html">Contacto</a>
         </div>
+        
         <div class="nav-icons">
             <span class="material-symbols-outlined">search</span>
         </div>
     </nav>
-
     <main>
         
         <section class="productos">
@@ -88,6 +95,6 @@
             </a>
         </div>
     </footer>
-
+    <script src="../js/adultos.js"></script>
 </body>
 </html>
