@@ -9,32 +9,49 @@
 </head>
 <body>
 
-  
+    <!-- OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay"></div>
 
-    <nav class="main-navbar">
-        <div class="nav-logo">
-            <a href="../index.html">
-                <div class="nav-logo-circle">
-                    <img src="../img/logo2-.png" alt="Camisetas Premium Logo">
-                </div>
-            </a>
-        </div>
-    
-        <button class="nav-toggle" aria-label="Abrir menú">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    
-        <div class="nav-links" id="navLinks">
-            <button class="nav-close" aria-label="Cerrar menú">
-                <span class="material-symbols-outlined">close</span>
+    <!-- PANEL LATERAL IZQUIERDO -->
+    <nav class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <button class="nav-toggle" id="navToggle" aria-label="Cerrar menú">
+                <span class="material-symbols-outlined">menu</span>
             </button>
-            <a href="../index.html">Inicio</a>
-            <a href="adultos.html">Adultos</a>
-            <a href="niños.html">Niños</a>
-            <a href="otros.html">Otros</a>
-            <a href="contacto.html" class="active">Contacto</a>
         </div>
-        
+        <ul class="side-menu-links">
+            <li><a href="../index.html">
+                <span class="material-symbols-outlined">home</span> Inicio
+            </a></li>
+            <li><a href="adultos.html">
+                <span class="material-symbols-outlined">checkroom</span> Adultos
+            </a></li>
+            <li><a href="niños.html">
+                <span class="material-symbols-outlined">child_care</span> Niños
+            </a></li>
+            <li><a href="otros.html">
+                <span class="material-symbols-outlined">category</span> Otros
+            </a></li>
+            <li><a href="contacto.html" class="active">
+                <span class="material-symbols-outlined">mail</span> Contacto
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="main-navbar">
+        <div class="navbar-left">
+            <button class="nav-toggle-top" id="navToggleTop" aria-label="Abrir menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <div class="nav-logo-circle">
+                        <img src="../img/logo2-.png" alt="Camisetas Premium Logo">
+                    </div>
+                </a>
+            </div>
+        </div>
         <div class="nav-icons">
             <span class="material-symbols-outlined">search</span>
         </div>
@@ -49,12 +66,6 @@
     </header>
 
     <main class="container">
-
-        <div style="margin-bottom: 30px;">
-            <a href="../index.html" class="btn-gold-outline" style="padding: 8px 16px; font-size: 11px;">
-                <span class="material-symbols-outlined icon-inline" style="font-size: 16px;">arrow_back</span> VOLVER AL INICIO
-            </a>
-        </div>
 
         <section class="contacto-info-grid">
             <div class="info-premium-card">
@@ -108,21 +119,6 @@
                         <label for="producto">Producto de interés</label>
                         <select id="producto">
                             <option value="">-- Seleccioná un producto --</option>
-                            <!-- <optgroup label="☀️ Verano">
-                                <option value="Remera Dry-Fit (VX-V01) - $9.500">Remera Dry-Fit (VX-V01) - $9.500</option>
-                                <option value="Short Running (VX-V02) - $7.500">Short Running (VX-V02) - $7.500</option>
-                                <option value="Musculosa Sport (VX-V03) - $6.000">Musculosa Sport (VX-V03) - $6.000</option>
-                            </optgroup>
-                            <optgroup label="🧥 Invierno">
-                                <option value="Buzo Hoodie (VX-I01) - $16.000">Buzo Hoodie (VX-I01) - $16.000</option>
-                                <option value="Campera Deportiva (VX-I02) - $22.000">Campera Deportiva (VX-I02) - $22.000</option>
-                                <option value="Pantalón Jogger (VX-I03) - $13.500">Pantalón Jogger (VX-I03) - $13.500</option>
-                            </optgroup>
-                            <optgroup label="🛒 Destacados">
-                                <option value="Remera Training (VX01) - $10.000">Remera Training (VX01) - $10.000</option>
-                                <option value="Short Pro (VX02) - $8.000">Short Pro (VX02) - $8.000</option>
-                                <option value="Buzo Elite (VX03) - $15.000">Buzo Elite (VX03) - $15.000</option>
-                            </optgroup> -->
                         </select>
                     </div>
                     <div class="form-group">
@@ -165,6 +161,7 @@
     <footer>
         <p>© 2026 Camisetas Premium. Todos los derechos reservados.</p>
     </footer>
+
     <script src="../js/contacto.js"></script>
 
     <script>

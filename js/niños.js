@@ -1,29 +1,26 @@
-// js/script.js
-
 document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.getElementById("navLinks");
-    const navToggle = document.querySelector(".nav-toggle");
-    const navClose = document.querySelector(".nav-close");
+    const sideMenu = document.getElementById("sideMenu");
+    const overlay  = document.getElementById("menuOverlay");
+    const btnTop   = document.getElementById("navToggleTop");
+    const btnPanel = document.getElementById("navToggle");
 
-    // Abrir el menú hamburguesa
-    if (navToggle && navLinks) {
-        navToggle.addEventListener("click", () => {
-            navLinks.classList.add("nav-menu_visible");
-        });
+    function abrirMenu() {
+        sideMenu.classList.add("open");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
     }
 
-    // Cerrar el menú con el botón de la equis (X)
-    if (navClose && navLinks) {
-        navClose.addEventListener("click", () => {
-            navLinks.classList.remove("nav-menu_visible");
-        });
+    function cerrarMenu() {
+        sideMenu.classList.remove("open");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
     }
 
-    // Opcional: Cerrar el menú automáticamente si se hace clic en cualquier enlace
-    const links = document.querySelectorAll(".nav-links a");
-    links.forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("nav-menu_visible");
-        });
+    if (btnTop)   btnTop.addEventListener("click", abrirMenu);
+    if (btnPanel) btnPanel.addEventListener("click", cerrarMenu);
+    if (overlay)  overlay.addEventListener("click", cerrarMenu);
+
+    document.querySelectorAll(".side-menu-links a").forEach(link => {
+        link.addEventListener("click", cerrarMenu);
     });
 });

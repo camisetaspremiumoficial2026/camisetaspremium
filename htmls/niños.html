@@ -9,39 +9,55 @@
 </head>
 <body>
 
-    <!-- NAVBAR (igual que index.html) -->
-    <nav class="main-navbar">
-        <div class="nav-logo">
-            <a href="../index.html">
-                <div class="nav-logo-circle">
-                    <img src="../img/logo2-.png" alt="Camisetas Premium Logo">
-                </div>
-            </a>
-        </div>
-    
-        <button class="nav-toggle" aria-label="Abrir menú">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    
-        <div class="nav-links" id="navLinks">
-            <button class="nav-close" aria-label="Cerrar menú">
-                <span class="material-symbols-outlined">close</span>
+    <!-- OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- PANEL LATERAL IZQUIERDO -->
+    <nav class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <button class="nav-toggle" id="navToggle" aria-label="Cerrar menú">
+                <span class="material-symbols-outlined">menu</span>
             </button>
-            <a href="../index.html">Inicio</a>
-            <a href="adultos.html">Adultos</a>
-            <a href="niños.html" class="active">Niños</a>
-            <a href="otros.html">Otros</a>
-            <a href="contacto.html">Contacto</a>
         </div>
-        
+        <ul class="side-menu-links">
+            <li><a href="../index.html">
+                <span class="material-symbols-outlined">home</span> Inicio
+            </a></li>
+            <li><a href="adultos.html">
+                <span class="material-symbols-outlined">checkroom</span> Adultos
+            </a></li>
+            <li><a href="niños.html" class="active">
+                <span class="material-symbols-outlined">child_care</span> Niños
+            </a></li>
+            <li><a href="otros.html">
+                <span class="material-symbols-outlined">category</span> Otros
+            </a></li>
+            <li><a href="contacto.html">
+                <span class="material-symbols-outlined">mail</span> Contacto
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="main-navbar">
+        <div class="navbar-left">
+            <button class="nav-toggle-top" id="navToggleTop" aria-label="Abrir menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <div class="nav-logo-circle">
+                        <img src="../img/logo2-.png" alt="Camisetas Premium Logo">
+                    </div>
+                </a>
+            </div>
+        </div>
         <div class="nav-icons">
             <span class="material-symbols-outlined">search</span>
         </div>
     </nav>
 
     <main>
-        <a href="../index.html" class="btn-volver">← Volver al Inicio</a>
-
         <section class="productos">
 
             <div class="card">
@@ -98,6 +114,7 @@
             </a>
         </div>
     </footer>
+
     <script src="../js/niños.js"></script>
 </body>
 </html>

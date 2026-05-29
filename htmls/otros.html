@@ -9,45 +9,61 @@
 </head>
 <body>
 
-    <!-- NAVBAR (igual que index.html) -->
-    <nav class="main-navbar">
-        <div class="nav-logo">
-            <a href="../index.html">
-                <div class="nav-logo-circle">
-                    <img src="../img/logo2-.png" alt="Camisetas Premium Logo">
-                </div>
-            </a>
-        </div>
-    
-        <button class="nav-toggle" aria-label="Abrir menú">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    
-        <div class="nav-links" id="navLinks">
-            <button class="nav-close" aria-label="Cerrar menú">
-                <span class="material-symbols-outlined">close</span>
+    <!-- OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- PANEL LATERAL IZQUIERDO -->
+    <nav class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <button class="nav-toggle" id="navToggle" aria-label="Cerrar menú">
+                <span class="material-symbols-outlined">menu</span>
             </button>
-            <a href="../index.html">Inicio</a>
-            <a href="adultos.html">Adultos</a>
-            <a href="niños.html">Niños</a>
-            <a href="otros.html" class="active">Otros</a>
-            <a href="contacto.html">Contacto</a>
         </div>
-        
+        <ul class="side-menu-links">
+            <li><a href="../index.html">
+                <span class="material-symbols-outlined">home</span> Inicio
+            </a></li>
+            <li><a href="adultos.html">
+                <span class="material-symbols-outlined">checkroom</span> Adultos
+            </a></li>
+            <li><a href="niños.html">
+                <span class="material-symbols-outlined">child_care</span> Niños
+            </a></li>
+            <li><a href="otros.html" class="active">
+                <span class="material-symbols-outlined">category</span> Otros
+            </a></li>
+            <li><a href="contacto.html">
+                <span class="material-symbols-outlined">mail</span> Contacto
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="main-navbar">
+        <div class="navbar-left">
+            <button class="nav-toggle-top" id="navToggleTop" aria-label="Abrir menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <div class="nav-logo-circle">
+                        <img src="../img/logo2-.png" alt="Camisetas Premium Logo">
+                    </div>
+                </a>
+            </div>
+        </div>
         <div class="nav-icons">
             <span class="material-symbols-outlined">search</span>
         </div>
     </nav>
-    <main>
-        <a href="../index.html" class="btn-volver">← Volver al Inicio</a>
 
+    <main>
         <section class="productos">
 
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Zapatillas Running">
                 <h3>Zapatillas Running</h3>
                 <p>Código: VX-X01</p>
-                <p class="precio">$35.000</p>
                 <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20Zapatillas%20Running%20(VX-X01)" class="btn">Consultar</a>
             </div>
 
@@ -55,7 +71,6 @@
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Mochila Deportiva">
                 <h3>Mochila Deportiva</h3>
                 <p>Código: VX-X02</p>
-                <p class="precio">$18.000</p>
                 <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20Mochila%20Deportiva%20(VX-X02)" class="btn">Consultar</a>
             </div>
 
@@ -63,7 +78,6 @@
                 <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=300&fit=crop" alt="Medias Deportivas">
                 <h3>Medias Deportivas x3</h3>
                 <p>Código: VX-X03</p>
-                <p class="precio">$4.500</p>
                 <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20Medias%20Deportivas%20(VX-X03)" class="btn">Consultar</a>
             </div>
 
@@ -71,7 +85,6 @@
                 <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=400&h=300&fit=crop" alt="Gorra Sport">
                 <h3>Gorra Sport</h3>
                 <p>Código: VX-X04</p>
-                <p class="precio">$5.500</p>
                 <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20Gorra%20Sport%20(VX-X04)" class="btn">Consultar</a>
             </div>
 
@@ -79,7 +92,6 @@
                 <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&h=300&fit=crop" alt="Botella Térmica">
                 <h3>Botella Térmica</h3>
                 <p>Código: VX-X05</p>
-                <p class="precio">$7.000</p>
                 <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20Botella%20Térmica%20(VX-X05)" class="btn">Consultar</a>
             </div>
 
@@ -87,7 +99,6 @@
                 <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop" alt="Guantes Gym">
                 <h3>Guantes Gym</h3>
                 <p>Código: VX-X06</p>
-                <p class="precio">$6.500</p>
                 <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20Guantes%20Gym%20(VX-X06)" class="btn">Consultar</a>
             </div>
 
@@ -103,6 +114,7 @@
             </a>
         </div>
     </footer>
+
     <script src="../js/otros.js"></script>
 </body>
 </html>
