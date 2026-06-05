@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sideMenu   = document.getElementById("sideMenu");
-    const overlay    = document.getElementById("menuOverlay");
-    const btnTop     = document.getElementById("navToggleTop");
-    const btnPanel   = document.getElementById("navToggle");
+    const sideMenu = document.getElementById("sideMenu");
+    const overlay  = document.getElementById("menuOverlay");
+    const btnTop   = document.getElementById("navToggleTop");
+    const btnPanel = document.getElementById("navToggle");
 
     function abrirMenu() {
         sideMenu.classList.add("open");

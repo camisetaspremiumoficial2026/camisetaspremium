@@ -1,4 +1,3 @@
-/* --- CONFIGURACIÓN GENERAL Y FUENTES --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 
 * {
@@ -21,7 +20,7 @@ a {
 }
 
 /* ================================
-   OVERLAY
+   OVERLAY (solo mobile)
    ================================ */
 .menu-overlay {
     display: none;
@@ -36,7 +35,7 @@ a {
 }
 
 /* ================================
-   PANEL LATERAL IZQUIERDO
+   PANEL LATERAL (solo mobile)
    ================================ */
 .side-menu {
     position: fixed;
@@ -147,6 +146,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
+    gap: 20px;
 }
 
 .navbar-left {
@@ -155,7 +155,9 @@ a {
     gap: 15px;
 }
 
+/* Botón hamburguesa: OCULTO en desktop, visible en mobile */
 .nav-toggle-top {
+    display: none;
     background: rgba(212, 175, 55, 0.08);
     border: 1px solid rgba(212, 175, 55, 0.2);
     color: #d4af37;
@@ -163,7 +165,6 @@ a {
     width: 42px;
     height: 42px;
     border-radius: 8px;
-    display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease, border-color 0.2s ease;
@@ -174,9 +175,39 @@ a {
 }
 .nav-toggle-top span { font-size: 26px; }
 
-.nav-links { display: none !important; }
-.nav-close  { display: none !important; }
+/* Links de desktop */
+.nav-desktop-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
 
+.nav-desktop-links li a {
+    color: #999;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.nav-desktop-links li a:hover {
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.nav-desktop-links li a.active {
+    color: #d4af37;
+    border-bottom-color: #d4af37;
+}
+
+/* Logo */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -224,8 +255,12 @@ a {
 }
 .nav-icons span:hover { color: #d4af37; }
 
+/* Ocultar elementos viejos */
+.nav-links { display: none !important; }
+.nav-close  { display: none !important; }
+
 /* ================================
-   MAIN Y PRODUCTOS
+   MAIN
    ================================ */
 main {
     max-width: 1400px;
@@ -233,6 +268,9 @@ main {
     padding: 50px 4%;
 }
 
+/* ================================
+   GRID DE PRODUCTOS
+   ================================ */
 .productos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -265,7 +303,9 @@ main {
     background-color: #161616;
 }
 
-.card:hover img { transform: scale(1.04); }
+.card:hover img {
+    transform: scale(1.04);
+}
 
 .card h3 {
     font-size: 14px;
@@ -302,7 +342,7 @@ main {
     background-color: #25d366;
     color: #fff;
     border-color: #25d366;
-    box-shadow: 0 4px 15px rgba(37,211,102,0.25);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
 }
 
 /* ================================
@@ -332,17 +372,30 @@ footer {
     color: #444;
     transition: color 0.3s ease;
 }
+
 .footer-ig:hover { color: #d4af37; }
 
 /* ================================
-   RESPONSIVE
+   RESPONSIVE — MOBILE
    ================================ */
 @media (max-width: 768px) {
+    .nav-toggle-top {
+        display: flex;
+    }
+
+    .nav-desktop-links {
+        display: none;
+    }
+
     .productos {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 15px;
     }
-    .card img { height: 200px; }
+
+    .card img {
+        height: 200px;
+    }
+
     .footer-content {
         flex-direction: column;
         gap: 15px;

@@ -9,14 +9,14 @@
 </head>
 <body>
 
-    <!-- OVERLAY -->
+    <!-- OVERLAY (solo mobile) -->
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- PANEL LATERAL IZQUIERDO -->
+    <!-- PANEL LATERAL (solo mobile) -->
     <nav class="side-menu" id="sideMenu">
         <div class="side-menu-header">
             <button class="nav-toggle" id="navToggle" aria-label="Cerrar menú">
-                <span class="material-symbols-outlined">menu</span>
+                <span class="material-symbols-outlined">close</span>
             </button>
         </div>
         <ul class="side-menu-links">
@@ -41,15 +41,28 @@
     <!-- NAVBAR SUPERIOR -->
     <nav class="main-navbar">
         <div class="navbar-left">
+            <!-- Botón hamburguesa: solo visible en mobile -->
             <button class="nav-toggle-top" id="navToggleTop" aria-label="Abrir menú">
                 <span class="material-symbols-outlined">menu</span>
             </button>
             <div class="nav-logo">
-                <div class="nav-logo-circle">
-                    <img src="./img/logo2-.png" alt="Camisetas Premium Logo">
-                </div>
+                <a href="./index.html">
+                    <div class="nav-logo-circle">
+                        <img src="./img/logo2-.png" alt="Camisetas Premium Logo">
+                    </div>
+                </a>
             </div>
         </div>
+
+        <!-- Links visibles en desktop -->
+        <ul class="nav-desktop-links">
+            <li><a href="./index.html" class="active">Inicio</a></li>
+            <li><a href="./htmls/adultos.html">Adultos</a></li>
+            <li><a href="./htmls/niños.html">Niños</a></li>
+            <li><a href="./htmls/otros.html">Otros</a></li>
+            <li><a href="./htmls/contacto.html">Contacto</a></li>
+        </ul>
+
         <div class="nav-icons">
             <span class="material-symbols-outlined">search</span>
         </div>

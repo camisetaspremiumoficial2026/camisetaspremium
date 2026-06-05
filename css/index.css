@@ -1,4 +1,3 @@
-/* --- CONFIGURACIÓN GENERAL Y FUENTES --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 
 * {
@@ -21,7 +20,7 @@ a {
 }
 
 /* ================================
-   OVERLAY
+   OVERLAY (solo mobile)
    ================================ */
 .menu-overlay {
     display: none;
@@ -36,7 +35,7 @@ a {
 }
 
 /* ================================
-   PANEL LATERAL IZQUIERDO
+   PANEL LATERAL (solo mobile)
    ================================ */
 .side-menu {
     position: fixed;
@@ -57,7 +56,6 @@ a {
     left: 0;
 }
 
-/* Header del panel con el botón hamburguesa */
 .side-menu-header {
     padding: 18px 20px;
     border-bottom: 1px solid #1a1a1a;
@@ -65,7 +63,6 @@ a {
     align-items: center;
 }
 
-/* Botón hamburguesa DENTRO del panel (para cerrar) */
 .nav-toggle {
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid rgba(212, 175, 55, 0.25);
@@ -83,11 +80,8 @@ a {
     background: rgba(212, 175, 55, 0.2);
     border-color: #d4af37;
 }
-.nav-toggle span {
-    font-size: 24px;
-}
+.nav-toggle span { font-size: 24px; }
 
-/* Links del menú lateral */
 .side-menu-links {
     list-style: none;
     padding: 12px 0;
@@ -152,6 +146,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
+    gap: 20px;
 }
 
 .navbar-left {
@@ -160,8 +155,9 @@ a {
     gap: 15px;
 }
 
-/* Botón hamburguesa en la navbar superior */
+/* Botón hamburguesa: OCULTO en desktop, visible en mobile */
 .nav-toggle-top {
+    display: none;
     background: rgba(212, 175, 55, 0.08);
     border: 1px solid rgba(212, 175, 55, 0.2);
     color: #d4af37;
@@ -169,7 +165,6 @@ a {
     width: 42px;
     height: 42px;
     border-radius: 8px;
-    display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease, border-color 0.2s ease;
@@ -178,15 +173,41 @@ a {
     background: rgba(212, 175, 55, 0.18);
     border-color: #d4af37;
 }
-.nav-toggle-top span {
-    font-size: 26px;
+.nav-toggle-top span { font-size: 26px; }
+
+/* Links de desktop */
+.nav-desktop-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
 }
 
-/* Ocultar nav-links viejo */
-.nav-links { display: none !important; }
-.nav-close  { display: none !important; }
+.nav-desktop-links li a {
+    color: #999;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
 
-/* --- LOGO --- */
+.nav-desktop-links li a:hover {
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.nav-desktop-links li a.active {
+    color: #d4af37;
+    border-bottom-color: #d4af37;
+}
+
+/* Logo */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -233,6 +254,10 @@ a {
     cursor: pointer;
 }
 .nav-icons span:hover { color: #d4af37; }
+
+/* Ocultar elementos viejos */
+.nav-links { display: none !important; }
+.nav-close  { display: none !important; }
 
 /* ================================
    HERO
@@ -389,4 +414,27 @@ footer {
     border-top: 1px solid #111;
     color: #444;
     font-size: 12px;
+}
+
+/* ================================
+   RESPONSIVE — MOBILE
+   ================================ */
+@media (max-width: 768px) {
+    /* Mostrar botón hamburguesa */
+    .nav-toggle-top {
+        display: flex;
+    }
+
+    /* Ocultar links de desktop */
+    .nav-desktop-links {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
 }
