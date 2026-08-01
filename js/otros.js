@@ -1,4 +1,4 @@
-const API_URL = 'https://camisetaspremium.onrender.com';
+const API_URL = 'https://camisetaspremium-api.onrender.com';
 document.addEventListener("DOMContentLoaded", () => {
     const sideMenu = document.getElementById("sideMenu");
     const overlay  = document.getElementById("menuOverlay");
