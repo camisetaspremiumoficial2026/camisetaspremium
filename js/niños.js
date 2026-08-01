@@ -1,5 +1,4 @@
-const API_URL = 'http://localhost:3000';
-
+const API_URL = 'https://camisetaspremium.onrender.com';
 document.addEventListener("DOMContentLoaded", () => {
     const sideMenu = document.getElementById("sideMenu");
     const overlay  = document.getElementById("menuOverlay");
