@@ -42,6 +42,7 @@ async function cargarDestacados() {
                 <div class="product-details">
                     <h3>${p.nombre}</h3>
                     <p class="code">Código: ${p.codigo}</p>
+                    <p class="precio">$${p.precio?.toLocaleString('es-AR') ?? 'Consultar'}</p>
                     <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20${encodeURIComponent(p.nombre)}%20(${p.codigo})" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>

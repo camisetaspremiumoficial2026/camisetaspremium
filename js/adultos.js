@@ -1,6 +1,6 @@
 const API_URL = 'https://camisetaspremium-api.onrender.com';
-document.addEventListener("DOMContentLoaded", () => {
 
+document.addEventListener("DOMContentLoaded", () => {
     const sideMenu = document.getElementById("sideMenu");
     const overlay  = document.getElementById("menuOverlay");
     const btnTop   = document.getElementById("navToggleTop");
@@ -37,6 +37,7 @@ async function cargarProductos() {
                 <img src="${p.imagenUrl}" alt="${p.nombre}" loading="lazy">
                 <h3>${p.nombre}</h3>
                 <p>Código: ${p.codigo}</p>
+                <p class="precio">$${p.precio?.toLocaleString('es-AR') ?? 'Consultar'}</p>
                 <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20${encodeURIComponent(p.nombre)}%20(${p.codigo})" class="btn">Consultar</a>
             </div>
         `).join('');

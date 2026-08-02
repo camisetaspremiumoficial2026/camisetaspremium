@@ -398,3 +398,11 @@ footer {
         text-align: center;
     }
 }
+
+.precio {
+    color: #d4af37;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 18px 10px;
+    letter-spacing: 0.5px;
+}
