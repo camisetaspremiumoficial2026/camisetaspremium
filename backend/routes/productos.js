@@ -3,9 +3,7 @@ const router = express.Router();
 const Producto = require('../models/Producto');
 const { upload, cloudinary } = require('../middleware/cloudinaryUpload');
 
-// GET /api/productos — todos los activos
-// GET /api/productos?categoria=adultos — filtrar por categoría
-// GET /api/productos?destacado=true — solo los destacados (para el inicio)
+// GET todos los productos
 router.get('/', async (req, res) => {
     try {
         const filtro = { activo: true };
@@ -19,7 +17,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET /api/productos/:id — uno por ID
+// GET uno por ID
 router.get('/:id', async (req, res) => {
     try {
         const producto = await Producto.findById(req.params.id);
@@ -30,47 +28,54 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// POST /api/productos — crear con imagen
-// Body: multipart/form-data con campo "imagen" (file) + nombre, codigo, categoria
+// POST crear producto con código automático CP-01, CP-02...
 router.post('/', upload.single('imagen'), async (req, res) => {
     try {
-        const { nombre, codigo, categoria, destacado } = req.body;
+        const { nombre, categoria, destacado } = req.body;
 
         if (!req.file) return res.status(400).json({ error: 'La imagen es obligatoria' });
+
+        // Generar código automático
+        const ultimo = await Producto.findOne({ codigo: /^CP-/ })
+            .sort({ codigo: -1 });
+
+        let numero = 1;
+        if (ultimo) {
+            const n = parseInt(ultimo.codigo.split('-')[1]);
+            numero = n + 1;
+        }
+
+        const codigo = `CP-${String(numero).padStart(2, '0')}`;
 
         const producto = new Producto({
             nombre,
             codigo,
             categoria,
             destacado: destacado === 'true',
-            imagenUrl:      req.file.path,        // URL pública de Cloudinary
-            imagenPublicId: req.file.filename      // ID para borrar si hace falta
+            imagenUrl:      req.file.path,
+            imagenPublicId: req.file.filename
         });
 
         await producto.save();
         res.status(201).json(producto);
+
     } catch (err) {
-        if (err.code === 11000) {
-            return res.status(400).json({ error: 'El código de producto ya existe' });
-        }
         res.status(500).json({ error: 'Error al crear el producto' });
     }
 });
 
-// PUT /api/productos/:id — editar (con o sin nueva imagen)
+// PUT editar producto
 router.put('/:id', upload.single('imagen'), async (req, res) => {
     try {
         const producto = await Producto.findById(req.params.id);
         if (!producto) return res.status(404).json({ error: 'Producto no encontrado' });
 
-        const { nombre, codigo, categoria, destacado, activo } = req.body;
+        const { nombre, categoria, destacado, activo } = req.body;
         if (nombre)    producto.nombre    = nombre;
-        if (codigo)    producto.codigo    = codigo;
         if (categoria) producto.categoria = categoria;
         if (destacado !== undefined) producto.destacado = destacado === 'true';
         if (activo    !== undefined) producto.activo    = activo    === 'true';
 
-        // Si viene nueva imagen, borramos la vieja de Cloudinary y guardamos la nueva
         if (req.file) {
             if (producto.imagenPublicId) {
                 await cloudinary.uploader.destroy(producto.imagenPublicId);
@@ -86,13 +91,12 @@ router.put('/:id', upload.single('imagen'), async (req, res) => {
     }
 });
 
-// DELETE /api/productos/:id — borrar producto e imagen
+// DELETE borrar producto
 router.delete('/:id', async (req, res) => {
     try {
         const producto = await Producto.findByIdAndDelete(req.params.id);
         if (!producto) return res.status(404).json({ error: 'Producto no encontrado' });
 
-        // Borrar imagen de Cloudinary
         if (producto.imagenPublicId) {
             await cloudinary.uploader.destroy(producto.imagenPublicId);
         }
