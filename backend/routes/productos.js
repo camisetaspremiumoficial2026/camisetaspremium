@@ -17,6 +17,23 @@ router.get('/', async (req, res) => {
     }
 });
 
+// GET buscar — ANTES de /:id
+router.get('/buscar', async (req, res) => {
+    try {
+        const q = req.query.q;
+        if (!q || q.length < 2) return res.json([]);
+
+        const productos = await Producto.find({
+            activo: true,
+            nombre: { $regex: q, $options: 'i' }
+        }).limit(6);
+
+        res.json(productos);
+    } catch (err) {
+        res.status(500).json({ error: 'Error en búsqueda' });
+    }
+});
+
 // GET uno por ID
 router.get('/:id', async (req, res) => {
     try {
@@ -28,16 +45,14 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// POST crear producto con código automático CP-01, CP-02...
+// POST crear producto
 router.post('/', upload.single('imagen'), async (req, res) => {
     try {
         const { nombre, categoria, destacado } = req.body;
 
         if (!req.file) return res.status(400).json({ error: 'La imagen es obligatoria' });
 
-        // Generar código automático
-        const ultimo = await Producto.findOne({ codigo: /^CP-/ })
-            .sort({ codigo: -1 });
+        const ultimo = await Producto.findOne({ codigo: /^CP-/ }).sort({ codigo: -1 });
 
         let numero = 1;
         if (ultimo) {
@@ -106,20 +121,5 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({ error: 'Error al eliminar el producto' });
     }
 });
-// GET /api/productos/buscar?q=remera
-router.get('/buscar', async (req, res) => {
-    try {
-        const q = req.query.q;
-        if (!q || q.length < 2) return res.json([]);
 
-        const productos = await Producto.find({
-            activo: true,
-            nombre: { $regex: q, $options: 'i' }
-        }).limit(6);
-
-        res.json(productos);
-    } catch (err) {
-        res.status(500).json({ error: 'Error en búsqueda' });
-    }
-});
 module.exports = router;
