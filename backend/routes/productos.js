@@ -106,5 +106,20 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({ error: 'Error al eliminar el producto' });
     }
 });
+// GET /api/productos/buscar?q=remera
+router.get('/buscar', async (req, res) => {
+    try {
+        const q = req.query.q;
+        if (!q || q.length < 2) return res.json([]);
 
+        const productos = await Producto.find({
+            activo: true,
+            nombre: { $regex: q, $options: 'i' }
+        }).limit(6);
+
+        res.json(productos);
+    } catch (err) {
+        res.status(500).json({ error: 'Error en búsqueda' });
+    }
+});
 module.exports = router;
