@@ -9,8 +9,10 @@ const app  = express();
 const PORT = process.env.PORT || 3000;
 
 // Middlewares
-app.use(cors());              // permite que el frontend (otro dominio) llame a la API
-app.use(express.json());
+app.use(cors({
+    origin: ['https://camisetaspremium.onrender.com', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rutas
