@@ -402,9 +402,8 @@ footer {
         text-align: center;
     }
 }
-
 .precio {
-    color: #d4af37;
+    color: #d4af37 !important;
     font-size: 15px;
     font-weight: 700;
     padding: 0 18px 10px;
