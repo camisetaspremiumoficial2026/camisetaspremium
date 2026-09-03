@@ -266,7 +266,7 @@ a {
     position: relative;
     height: 75vh;
     background: linear-gradient(90deg, rgba(11,11,11,0.9) 30%, rgba(11,11,11,0.3) 100%),
-                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&fit=crop') no-repeat center center/cover;
+                url(../img/imagenprincipal.png) no-repeat center center/cover;
     display: flex;
     align-items: center;
     padding: 0 8%;
