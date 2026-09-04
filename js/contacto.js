@@ -1,6 +1,6 @@
 const API_WA = '5493413005198';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     // Menú
     const sideMenu = document.getElementById("sideMenu");
     const overlay  = document.getElementById("menuOverlay");
@@ -15,16 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (overlay)  overlay.addEventListener("click", cerrarMenu);
     document.querySelectorAll(".side-menu-links a").forEach(l => l.addEventListener("click", cerrarMenu));
 
-    // Cargar productos en los selects
-    cargarOpcionesProductos();
-
-    // Agregar primer producto al cargar
+    // Esperar que carguen los productos ANTES de agregar el primer item
+    await cargarOpcionesProductos();
     agregarProducto();
 
-    // Botón agregar producto
     document.getElementById('btnAgregar').addEventListener('click', agregarProducto);
-
-    // Enviar formulario
     document.getElementById('pedidoForm').addEventListener('submit', enviarPedido);
 });
 
@@ -37,6 +32,7 @@ async function cargarOpcionesProductos() {
         productos = await res.json();
     } catch (err) {
         console.error('Error cargando productos:', err);
+        productos = [];
     }
 }
 
@@ -93,19 +89,13 @@ function quitarProducto(id) {
 function enviarPedido(e) {
     e.preventDefault();
 
-    const nombreEl    = document.getElementById('nombre');
-    const telefonoEl  = document.getElementById('telefono');
-    const ciudadEl    = document.getElementById('ciudad');
-    const envioEl     = document.getElementById('envio');
-    const comentariosEl = document.getElementById('comentarios');
+    const nombre      = document.getElementById('nombre')?.value;
+    const telefono    = document.getElementById('telefono')?.value;
+    const ciudad      = document.getElementById('ciudad')?.value || 'No especificada';
+    const envio       = document.getElementById('envio')?.value || 'No especificado';
+    const comentarios = document.getElementById('comentarios')?.value || 'Ninguno';
 
-    if (!nombreEl || !telefonoEl) return;
-
-    const nombre      = nombreEl.value;
-    const telefono    = telefonoEl.value;
-    const ciudad      = ciudadEl?.value || 'No especificada';
-    const envio       = envioEl?.value || 'No especificado';
-    const comentarios = comentariosEl?.value || 'Ninguno';
+    if (!nombre || !telefono) return;
 
     const items = document.querySelectorAll('.producto-item');
     let listaTexto = '';
