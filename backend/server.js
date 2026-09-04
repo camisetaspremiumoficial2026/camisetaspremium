@@ -10,10 +10,14 @@ const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(cors({
-    origin: ['https://camisetaspremium.onrender.com', 'http://localhost:3000'],
+    origin: [
+        'https://camisetaspremium.onrender.com',
+        'http://localhost:3000',
+        'http://127.0.0.1:5500',
+        'http://127.0.0.1:5501'
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE']
-}));app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+}));
 
 // Rutas
 app.use('/api/productos', productosRouter);

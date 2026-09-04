@@ -9,10 +9,8 @@
 </head>
 <body>
 
-    <!-- OVERLAY (solo mobile) -->
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- PANEL LATERAL (solo mobile) -->
     <nav class="side-menu" id="sideMenu">
         <div class="side-menu-header">
             <button class="nav-toggle" id="navToggle" aria-label="Cerrar menú">
@@ -38,7 +36,6 @@
         </ul>
     </nav>
 
-    <!-- NAVBAR SUPERIOR -->
     <nav class="main-navbar">
         <div class="navbar-left">
             <button class="nav-toggle-top" id="navToggleTop" aria-label="Abrir menú">
@@ -52,8 +49,6 @@
                 </a>
             </div>
         </div>
-
-        <!-- Links visibles en desktop -->
         <ul class="nav-desktop-links">
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="adultos.html">Adultos</a></li>
@@ -61,7 +56,6 @@
             <li><a href="otros.html">Otros</a></li>
             <li><a href="contacto.html" class="active">Contacto</a></li>
         </ul>
-
         <div class="nav-icons">
             <span class="material-symbols-outlined">search</span>
         </div>
@@ -84,18 +78,16 @@
                 </div>
                 <h3>WhatsApp</h3>
                 <p>Respondemos tus dudas en minutos de manera directa</p>
-                <a href="https://wa.me/549XXXX" class="btn-card-action" target="_blank">Escribinos</a>
+                <a href="https://wa.me/5493413005198" class="btn-card-action" target="_blank">Escribinos</a>
             </div>
-
             <div class="info-premium-card">
                 <div class="card-icon-wrapper">
                     <span class="material-symbols-outlined">photo_camera</span>
                 </div>
                 <h3>Instagram</h3>
                 <p>Seguinos para ver los últimos ingresos y promociones</p>
-                <a href="https://www.instagram.com/vxsport" class="btn-card-action" target="_blank">@vxsport</a>
+                <a href="https://www.instagram.com/camisetaspremium" class="btn-card-action" target="_blank">@camisetaspremium</a>
             </div>
-
             <div class="info-premium-card">
                 <div class="card-icon-wrapper">
                     <span class="material-symbols-outlined">local_shipping</span>
@@ -109,10 +101,12 @@
         <section id="formulario" class="formulario-container">
             <div class="form-header">
                 <h2><span class="material-symbols-outlined icon-inline gold-text">assignment</span> HACER UN PEDIDO</h2>
-                <p>Completá los datos y generá tu orden directo a nuestro WhatsApp de atención</p>
+                <p>Completá los datos y generá tu orden directo a nuestro WhatsApp</p>
             </div>
 
-            <form id="pedidoForm" class="premium-form" onsubmit="enviarPedido(event)">
+            <form id="pedidoForm" class="premium-form">
+
+                <!-- Datos personales -->
                 <div class="form-row-2">
                     <div class="form-group">
                         <label for="nombre">Nombre completo</label>
@@ -120,44 +114,32 @@
                     </div>
                     <div class="form-group">
                         <label for="telefono">WhatsApp / Teléfono</label>
-                        <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
+                        <input type="tel" id="telefono" placeholder="Ej: 341 300-5198" required>
                     </div>
                 </div>
 
                 <div class="form-row-2">
-                    <div class="form-group">
-                        <label for="producto">Producto de interés</label>
-                        <select id="producto">
-                            <option value="">-- Seleccioná un producto --</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="talle">Talle</label>
-                        <select id="talle">
-                            <option value="XS">XS</option>
-                            <option value="S">S</option>
-                            <option value="M" selected>M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="XXL">XXL</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row-2">
-                    <div class="form-group">
-                        <label for="cantidad">Cantidad</label>
-                        <input type="number" id="cantidad" min="1" value="1">
-                    </div>
                     <div class="form-group">
                         <label for="ciudad">Provincia / Ciudad</label>
-                        <input type="text" id="ciudad" placeholder="Ej: Buenos Aires, CABA">
+                        <input type="text" id="ciudad" placeholder="Ej: Rosario, Santa Fe">
                     </div>
+            
+                </div>
+
+                <!-- Lista de productos -->
+                <div class="form-group">
+                    <label>Productos del pedido</label>
+                    <div id="listaProductos">
+                        <!-- los items se agregan acá -->
+                    </div>
+                    <button type="button" class="btn-agregar" id="btnAgregar">
+                        <span class="material-symbols-outlined">add_circle</span> Agregar producto
+                    </button>
                 </div>
 
                 <div class="form-group">
-                    <label for="comentarios">Comentarios u observaciones (opcional)</label>
-                    <textarea id="comentarios" rows="4" placeholder="Especificá colores, dudas o combinaciones que desees..."></textarea>
+                    <label for="comentarios">Comentarios (opcional)</label>
+                    <textarea id="comentarios" rows="3" placeholder="Colores, dudas, combinaciones..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-submit-whatsapp">
@@ -172,24 +154,7 @@
         <p>© 2026 Camisetas Premium. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="../js/script.js"></script>
     <script src="../js/contacto.js"></script>
-
-    <script>
-    function enviarPedido(e) {
-        e.preventDefault();
-        const nombre = document.getElementById('nombre').value;
-        const telefono = document.getElementById('telefono').value;
-        const producto = document.getElementById('producto').value || 'No especificado';
-        const talle = document.getElementById('talle').value;
-        const cantidad = document.getElementById('cantidad').value;
-        const ciudad = document.getElementById('ciudad').value || 'No especificada';
-        const comentarios = document.getElementById('comentarios').value || 'Ninguno';
-
-        const mensaje = `🛒 *NUEVO PEDIDO - Camisetas Premium*\n\n👤 Nombre: ${nombre}\n📱 Teléfono: ${telefono}\n👕 Producto: ${producto}\n📏 Talle: ${talle}\n🔢 Cantidad: ${cantidad}\n📍 Ciudad: ${ciudad}\n💬 Comentarios: ${comentarios}`;
-
-        const url = `https://wa.me/549XXXX?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, '_blank');
-    }
-    </script>
 </body>
 </html>
