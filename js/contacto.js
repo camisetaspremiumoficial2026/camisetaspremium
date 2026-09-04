@@ -92,7 +92,7 @@ function enviarPedido(e) {
     const nombre      = document.getElementById('nombre')?.value;
     const telefono    = document.getElementById('telefono')?.value;
     const ciudad      = document.getElementById('ciudad')?.value || 'No especificada';
-    const envio       = document.getElementById('envio')?.value || 'No especificado';
+    const direccion       = document.getElementById('direccion')?.value || 'No especificado';
     const comentarios = document.getElementById('comentarios')?.value || 'Ninguno';
 
     if (!nombre || !telefono) return;
@@ -122,7 +122,7 @@ function enviarPedido(e) {
 👤 Nombre: ${nombre}
 📱 Teléfono: ${telefono}
 📍 Ciudad: ${ciudad}
-🚚 Envío: ${envio}
+🚚 Direccion: ${direccion}
 
 🛍️ *Productos:*${listaTexto}
 
