@@ -37,7 +37,7 @@ async function cargarProductos() {
                 <h3>${p.nombre}</h3>
                 <p>Código: ${p.codigo}</p>
                 <p class="precio">$${p.precio?.toLocaleString('es-AR') ?? 'Consultar'}</p>
-                <a href="https://wa.me/549XXXX?text=Hola!%20Quiero%20consultar%20por%20${encodeURIComponent(p.nombre)}%20(${p.codigo})" class="btn">Consultar</a>
+                <a href="https://wa.me/543413005198?text=Hola!%20Quiero%20consultar%20por%20${encodeURIComponent(p.nombre)}%20(${p.codigo})" class="btn">Consultar por WhatsApp</a>
             </div>
         `).join('');
 
