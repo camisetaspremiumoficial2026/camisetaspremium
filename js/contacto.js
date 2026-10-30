@@ -92,7 +92,7 @@ function enviarPedido(e) {
     const nombre      = document.getElementById('nombre')?.value;
     const telefono    = document.getElementById('telefono')?.value;
     const ciudad      = document.getElementById('ciudad')?.value || 'No especificada';
-    const direccion       = document.getElementById('direccion')?.value || 'No especificado';
+    const direccion       = document.getElementById('direccion')?.value ;
     const comentarios = document.getElementById('comentarios')?.value || 'Ninguno';
 
     if (!nombre || !telefono) return;
