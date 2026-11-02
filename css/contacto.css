@@ -20,7 +20,7 @@ a {
 }
 
 /* ================================
-   OVERLAY (solo mobile)
+    OVERLAY (solo mobile)
    ================================ */
 .menu-overlay {
     display: none;
@@ -30,6 +30,7 @@ a {
     z-index: 1999;
     backdrop-filter: blur(2px);
 }
+
 .menu-overlay.active {
     display: block;
 }
@@ -76,11 +77,15 @@ a {
     justify-content: center;
     transition: background 0.2s ease, border-color 0.2s ease;
 }
+
 .nav-toggle:hover {
     background: rgba(212, 175, 55, 0.2);
     border-color: #d4af37;
 }
-.nav-toggle span { font-size: 24px; }
+
+.nav-toggle span {
+    font-size: 24px;
+}
 
 .side-menu-links {
     list-style: none;
@@ -168,11 +173,15 @@ a {
     justify-content: center;
     transition: background 0.2s ease, border-color 0.2s ease;
 }
+
 .nav-toggle-top:hover {
     background: rgba(212, 175, 55, 0.18);
     border-color: #d4af37;
 }
-.nav-toggle-top span { font-size: 26px; }
+
+.nav-toggle-top span {
+    font-size: 26px;
+}
 
 .nav-desktop-links {
     list-style: none;
@@ -220,7 +229,7 @@ a {
     align-items: center;
     justify-content: center;
     border: 2px solid #d4af37;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.6), inset 0 0 8px rgba(212,175,55,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 0 8px rgba(212, 175, 55, 0.3);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
 }
@@ -229,14 +238,14 @@ a {
     height: 90%;
     width: 90%;
     object-fit: contain;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8));
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.8));
     transition: transform 0.4s ease;
 }
 
 .nav-logo-circle:hover {
     transform: scale(1.05);
     border-color: #f3e5ab;
-    box-shadow: 0 6px 20px rgba(212,175,55,0.25), inset 0 0 12px rgba(212,175,55,0.5);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25), inset 0 0 12px rgba(212, 175, 55, 0.5);
 }
 
 .nav-logo-circle:hover img {
@@ -250,10 +259,18 @@ a {
     color: #fff;
     cursor: pointer;
 }
-.nav-icons span:hover { color: #d4af37; }
 
-.nav-links { display: none !important; }
-.nav-close  { display: none !important; }
+.nav-icons span:hover {
+    color: #d4af37;
+}
+
+.nav-links {
+    display: none !important;
+}
+
+.nav-close {
+    display: none !important;
+}
 
 /* ================================
    HERO
@@ -417,7 +434,9 @@ a {
     letter-spacing: 0.5px;
 }
 
-.gold-text { color: #d4af37; }
+.gold-text {
+    color: #d4af37;
+}
 
 .icon-inline {
     font-size: 20px;
@@ -549,7 +568,7 @@ footer {
 /* ================================
    FORMULARIO MULTI-PRODUCTO
    ================================ */
-   .producto-item {
+.producto-item {
     background: #161616;
     border: 1px solid #222;
     border-radius: 8px;
@@ -573,8 +592,8 @@ footer {
 }
 
 .btn-quitar {
-    background: rgba(255,50,50,0.1);
-    border: 1px solid rgba(255,50,50,0.2);
+    background: rgba(255, 50, 50, 0.1);
+    border: 1px solid rgba(255, 50, 50, 0.2);
     color: #ff4444;
     cursor: pointer;
     width: 32px;
@@ -585,15 +604,20 @@ footer {
     justify-content: center;
 }
 
-.btn-quitar span { font-size: 18px; }
-.btn-quitar:hover { background: rgba(255,50,50,0.2); }
+.btn-quitar span {
+    font-size: 18px;
+}
+
+.btn-quitar:hover {
+    background: rgba(255, 50, 50, 0.2);
+}
 
 .btn-agregar {
     display: flex;
     align-items: center;
     gap: 8px;
     background: transparent;
-    border: 1px dashed rgba(212,175,55,0.4);
+    border: 1px dashed rgba(212, 175, 55, 0.4);
     color: #d4af37;
     padding: 12px 20px;
     border-radius: 6px;
@@ -610,7 +634,7 @@ footer {
 }
 
 .btn-agregar:hover {
-    background: rgba(212,175,55,0.08);
+    background: rgba(212, 175, 55, 0.08);
     border-color: #d4af37;
 }
 
@@ -620,7 +644,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0, 0, 0, 0.92);
     z-index: 3000;
     display: none;
     flex-direction: column;
@@ -685,7 +709,7 @@ footer {
 }
 
 .search-result-item:hover {
-    background: rgba(212,175,55,0.08);
+    background: rgba(212, 175, 55, 0.08);
 }
 
 .search-result-item img {

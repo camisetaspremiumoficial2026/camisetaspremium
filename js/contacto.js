@@ -1,20 +1,6 @@
 const API_WA = '5493413005198';
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Menú
-    const sideMenu = document.getElementById("sideMenu");
-    const overlay  = document.getElementById("menuOverlay");
-    const btnTop   = document.getElementById("navToggleTop");
-    const btnPanel = document.getElementById("navToggle");
-
-    const abrirMenu  = () => { sideMenu.classList.add("open");    overlay.classList.add("active");    document.body.style.overflow = "hidden"; };
-    const cerrarMenu = () => { sideMenu.classList.remove("open"); overlay.classList.remove("active"); document.body.style.overflow = ""; };
-
-    if (btnTop)   btnTop.addEventListener("click", abrirMenu);
-    if (btnPanel) btnPanel.addEventListener("click", cerrarMenu);
-    if (overlay)  overlay.addEventListener("click", cerrarMenu);
-    document.querySelectorAll(".side-menu-links a").forEach(l => l.addEventListener("click", cerrarMenu));
-
     // Esperar que carguen los productos ANTES de agregar el primer item
     await cargarOpcionesProductos();
     agregarProducto();
@@ -62,7 +48,7 @@ function agregarProducto() {
             </div>
             <div class="form-group">
                 <label>Talle</label>
-                <select class="sel-talle" id="talle-${id}">
+                <select class="sel-talle" id="talle">
                     <option value="XS">XS</option>
                     <option value="S">S</option>
                     <option value="M" selected>M</option>
@@ -75,7 +61,7 @@ function agregarProducto() {
         </div>
         <div class="form-group">
             <label>Cantidad</label>
-            <input type="number" class="inp-cantidad" id="cant-${id}" min="1" value="1" style="max-width:100px">
+            <input type="number" class="inp-cantidad" id="cant" min="1" value="1" style="max-width:100px">
         </div>
     `;
 
@@ -91,12 +77,12 @@ function enviarPedido(e) {
 
     const nombre      = document.getElementById('nombre')?.value;
     const telefono    = document.getElementById('telefono')?.value;
-    const ciudad      = document.getElementById('ciudad')?.value || 'No especificada';
+    const ciudad      = document.getElementById('ciudad')?.value;
     const direccion       = document.getElementById('direccion')?.value ;
     const comentarios = document.getElementById('comentarios')?.value || 'Ninguno';
 
-    if (!nombre || !telefono) return;
-
+    if (!nombre || !telefono || !direccion || !ciudad) return;
+    
     const items = document.querySelectorAll('.producto-item');
     let listaTexto = '';
     let hayProducto = false;
