@@ -7,12 +7,12 @@ router.get('/', async (req, res) => {
     try {
         const filtro = { activo: true };
         if (req.query.categoria) filtro.categoria = req.query.categoria;
-        if (req.query.destacado)  filtro.destacado = req.query.destacado === 'true';
+        if (req.query.destacado)  filtro.destacado = req.query.destacado == true;
 
         const productos = await Producto.find(filtro).sort({ createdAt: -1 });
         res.json(productos);
     } catch (err) {
-        res.status(500).json({ error: 'Error al obtener productos' });
+        res.status(500).json({ error: 'Por ahora no hay producto' });
     }
 });
 
@@ -29,7 +29,7 @@ router.get('/buscar', async (req, res) => {
 
         res.json(productos);
     } catch (err) {
-        res.status(500).json({ error: 'Error en búsqueda' });
+        res.status(500).json({ error: 'Disculpe las molestias' });
     }
 });
 

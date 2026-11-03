@@ -22,7 +22,7 @@ app.use(cors({
 // Rutas
 app.use('/api/productos', productosRouter);
 
-// Health check — Render lo usa para saber si el server está vivo
+// Render lo usa para saber si el server está vivo
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
 // Conexión a MongoDB y arranque del servidor
