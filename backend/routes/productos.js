@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     try {
         const filtro = { activo: true };
         if (req.query.categoria) filtro.categoria = req.query.categoria;
-        if (req.query.destacado)  filtro.destacado = req.query.destacado == true;
+        if (req.query.destacado)  filtro.destacado = req.query.destacado === 'true' ;
 
         const productos = await Producto.find(filtro).sort({ createdAt: -1 });
         res.json(productos);
